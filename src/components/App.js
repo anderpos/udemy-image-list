@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 
 class App extends React.Component {
 
-  state = { images: null }
+  state = { images: [] }
 
   handleSubmit = async (term) => {
     const response = await unsplash.get("search/photos", {
@@ -17,12 +17,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{marginTop: '20px'}}>
+      <div className="ui container" style={{ marginTop: '20px' }}>
         <SearchBar handleSubmit={this.handleSubmit} />
-        Found { this.state.images.length } images.
+        Found { this.state.images.length} images.
       </div>
-      )
-    }
+    )
+  }
 }
 
 export default App;
